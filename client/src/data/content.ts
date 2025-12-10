@@ -1,9 +1,11 @@
 import { Book, Competency } from "./types";
-import stickRudder from "@assets/generated_images/vintage_aviation_book_cover_style,_stick_and_rudder.png";
-import bigJets from "@assets/generated_images/modern_technical_aviation_book_cover,_handling_the_big_jets.png";
-import checklist from "@assets/generated_images/clean_minimalist_book_cover,_the_checklist_manifesto.png";
-import fate from "@assets/generated_images/dramatic_aviation_memoir_cover,_fate_is_the_hunter.png";
-import crm from "@assets/generated_images/academic_textbook_cover,_crew_resource_management.png";
+import stickRudder from "@assets/generated_images/stick_and_rudder_book_cover,_vintage_blue_leatherette_with_gold_text.png";
+import bigJets from "@assets/generated_images/handling_the_big_jets_book_cover,_dark_technical_blueprint_style.png";
+import checklist from "@assets/generated_images/the_checklist_manifesto_book_cover,_red_with_white_checkmark.png";
+import fate from "@assets/generated_images/fate_is_the_hunter_book_cover,_moody_dc-3_in_storm.png";
+import crm from "@assets/generated_images/crew_resource_management_book_cover,_academic_blue_network.png";
+import thinking from "@assets/generated_images/thinking_fast_and_slow_book_cover,_clean_white_minimalist.png";
+import cockpit from "@assets/generated_images/cockpit_confidential_book_cover,_blue_sky_and_plane_tail.png";
 
 export const competencies: Competency[] = [
   {
@@ -147,6 +149,7 @@ export const books: Book[] = [
       amazon: "#",
       audible: "#"
     },
+    coverImage: thinking,
     coverColor: "bg-indigo-700"
   },
   {
@@ -161,6 +164,7 @@ export const books: Book[] = [
     links: {
       amazon: "#"
     },
+    coverImage: cockpit,
     coverColor: "bg-sky-700"
   }
 ];
