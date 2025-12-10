@@ -1,0 +1,53 @@
+You are an expert full-stack developer and UX designer.
+
+Build a simple, fast, static website that recommends books for pilots based on the ICAO pilot competencies.
+
+### Purpose
+Pilots should be able to:
+- Select which ICAO competency they want to improve.
+- See a list of recommended books relevant to that competency.
+- Read short explanations of how each book strengthens that skill in real airline flying.
+- Click affiliate links for each book (placeholders are fine).
+
+This is NOT a web app. No login, no backend, no database. Just a clean content site.
+
+### Flexibility
+You decide:
+- the tech stack (any static-friendly stack is fine)
+- page structure
+- layout
+- navigation
+- component design
+- how data is organised internally
+
+Just ensure:
+- It’s easy for me to add or edit books and competencies in one place (a JSON file, Markdown files, or any simple data system you choose).
+- The site is mobile-friendly, lightweight, and SEO-friendly.
+- Each competency automatically loads the books associated with it.
+
+### ICAO Competencies
+Use these eight as categories:
+- Manual Flight Path Management
+- Automated Flight Path Management
+- Communication
+- Application of Procedures
+- Situation Awareness & Management
+- Workload Management
+- Problem Solving & Decision Making
+- Leadership & Teamwork
+
+Populate the site with a few example books under each category so I can see how the system works.
+
+### Requirements
+- Clean, professional design suitable for airline pilots.
+- Smooth navigation.
+- Clear typography and simple layout.
+- Each book should display: title, author, summary, how it helps the competency, and placeholder links for Amazon/Booktopia/Audible.
+- Include a basic About page.
+
+### Deliverables
+- A working static website.
+- A data file or simple structure where I can add/edit books and competencies.
+- A README telling me how to modify the data and run the site.
+
+Focus on clarity, usability, and a structure that is easy to maintain. You choose the best implementation approach.
