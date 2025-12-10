@@ -1,11 +1,4 @@
 import { Book, Competency } from "./types";
-import stickRudder from "@assets/generated_images/stick_and_rudder_book_cover,_vintage_blue_leatherette_with_gold_text.png";
-import bigJets from "@assets/generated_images/handling_the_big_jets_book_cover,_dark_technical_blueprint_style.png";
-import checklist from "@assets/generated_images/the_checklist_manifesto_book_cover,_red_with_white_checkmark.png";
-import fate from "@assets/generated_images/fate_is_the_hunter_book_cover,_moody_dc-3_in_storm.png";
-import crm from "@assets/generated_images/crew_resource_management_book_cover,_academic_blue_network.png";
-import thinking from "@assets/generated_images/thinking_fast_and_slow_book_cover,_clean_white_minimalist.png";
-import cockpit from "@assets/generated_images/cockpit_confidential_book_cover,_blue_sky_and_plane_tail.png";
 
 export const competencies: Competency[] = [
   {
@@ -72,7 +65,7 @@ export const books: Book[] = [
       amazon: "#",
       audible: "#"
     },
-    coverImage: stickRudder,
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780070362406-L.jpg",
     coverColor: "bg-amber-700"
   },
   {
@@ -87,7 +80,7 @@ export const books: Book[] = [
     links: {
       amazon: "#"
     },
-    coverImage: bigJets,
+    coverImage: "https://covers.openlibrary.org/b/isbn/0903083019-L.jpg",
     coverColor: "bg-blue-800"
   },
   {
@@ -103,7 +96,7 @@ export const books: Book[] = [
       amazon: "#",
       audible: "#"
     },
-    coverImage: checklist,
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780312430009-L.jpg",
     coverColor: "bg-red-700"
   },
   {
@@ -118,7 +111,7 @@ export const books: Book[] = [
     links: {
       amazon: "#"
     },
-    coverImage: fate,
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780671636036-L.jpg",
     coverColor: "bg-slate-700"
   },
   {
@@ -133,7 +126,7 @@ export const books: Book[] = [
     links: {
       amazon: "#"
     },
-    coverImage: crm,
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780123749468-L.jpg",
     coverColor: "bg-emerald-700"
   },
   {
@@ -149,7 +142,7 @@ export const books: Book[] = [
       amazon: "#",
       audible: "#"
     },
-    coverImage: thinking,
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
     coverColor: "bg-indigo-700"
   },
   {
@@ -164,7 +157,7 @@ export const books: Book[] = [
     links: {
       amazon: "#"
     },
-    coverImage: cockpit,
+    coverImage: "https://covers.openlibrary.org/b/isbn/1402280912-L.jpg",
     coverColor: "bg-sky-700"
   }
 ];

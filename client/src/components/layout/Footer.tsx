@@ -8,6 +8,11 @@ export function Footer() {
         <p className="text-xs text-white/20">
           &copy; {new Date().getFullYear()} PilotReads. All rights reserved.
         </p>
+        <div className="mt-4">
+           <a href="/admin" className="text-[10px] text-white/10 hover:text-white/30 transition-colors uppercase tracking-widest">
+             Admin
+           </a>
+        </div>
       </div>
     </footer>
   );
