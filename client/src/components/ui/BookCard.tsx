@@ -106,7 +106,7 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
 
         {/* Right: Index + Buy */}
         <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4">
-          <div className="text-right max-w-[320px]">
+          <div className="text-right max-w-[220px]">
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">
               Index
             </div>
