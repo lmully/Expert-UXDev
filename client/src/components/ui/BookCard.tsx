@@ -26,15 +26,15 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
       animate={{ opacity: 1, y: 0 }}
       className="group bg-card border border-white/5 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300 shadow-lg"
     >
-          <div className="grid grid-cols-1 md:grid-cols-[320px_minmax(520px,700px)_auto]">
-
+      {/* Wider cover, slightly tighter center */}
+      <div className="grid grid-cols-1 md:grid-cols-[360px_minmax(460px,640px)_minmax(220px,280px)]">
         {/* Cover */}
-        <div className="w-full md:w-56 shrink-0 relative overflow-hidden bg-black/20">
+        <div className="w-full md:w-[360px] shrink-0 relative overflow-hidden bg-black/40 flex items-center justify-center">
           {book.coverImage ? (
             <img
               src={book.coverImage}
               alt={book.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
             />
           ) : (
             <div
@@ -52,8 +52,8 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
         </div>
 
         {/* Centre */}
-        <div className="p-6 md:p-8 flex flex-col min-w-0">
-          <div className="mb-6">
+        <div className="p-6 md:p-7 flex flex-col min-w-0">
+          <div className="mb-5">
             <h3 className="font-display font-bold text-2xl mb-2 group-hover:text-primary transition-colors leading-tight">
               {book.title}
             </h3>
@@ -105,18 +105,19 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
         </div>
 
         {/* Right: Index + Buy */}
-        <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4">
-          <div className="text-right max-w-[220px]">
+        <div className="p-6 md:p-7 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4">
+          <div className="text-right w-full max-w-[280px]">
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">
               Index
             </div>
 
-            <div className="text-sm font-semibold text-foreground whitespace-nowrap">
+            {/* WRAPS now */}
+            <div className="text-sm font-semibold text-foreground whitespace-normal break-words leading-snug">
               {indexValue}
             </div>
 
             {oneSentence && (
-              <div className="mt-2 text-xs text-muted-foreground whitespace-normal">
+              <div className="mt-2 text-xs text-muted-foreground whitespace-normal break-words">
                 {oneSentence}
               </div>
             )}
