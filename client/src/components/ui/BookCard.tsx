@@ -102,7 +102,7 @@ export function BookCard({ book }: BookCardProps) {
               Index
             </div>
             <div className="text-3xl font-bold tabular-nums">
-              {book.CompetencyIndex}
+              {book.competencyIndex}
             </div>
           </div>
 
