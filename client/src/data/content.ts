@@ -62,7 +62,7 @@ export const books: Book[] = [
     excerpt: "The airplane is a creature of the air; it is supported by the air, it is controlled by the air. It has no contact with the ground. It is not a ground vehicle. It is not an automobile.",
     competencyIds: ["manual-flight"],
     links: {
-      amazon: "#",
+      amazon: "https://amzn.to/456bc5s",
       audible: "#"
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780070362406-L.jpg",
