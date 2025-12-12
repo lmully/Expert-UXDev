@@ -77,7 +77,7 @@ export const books = [
 
     links: {
       amazon: "https://amzn.to/456bc5s",
-      audible: "#"
+      
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780070362406-L.jpg",
     coverColor: "bg-amber-700"
@@ -112,7 +112,7 @@ export const books = [
     ],
 
     links: {
-      amazon: "#"
+      amazon: "https://amzn.to/4oP8tV4",
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/0903083019-L.jpg",
     coverColor: "bg-blue-800"
@@ -141,15 +141,15 @@ export const books = [
       },
       {
         competencyId: "workload",
-        chapterPage: "Ch. 3–7 (design, iteration, rollout and testing of checklists)",
+        chapterPage: "Ch. 3–7",
         oneSentence:
           "Shows how standardisation reduces cognitive load and prevents task-saturation mistakes when things get busy."
       }
     ],
 
     links: {
-      amazon: "#",
-      audible: "#"
+      amazon: "https://amzn.to/3MT32qN",
+      
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780312430009-L.jpg",
     coverColor: "bg-red-700"
@@ -184,7 +184,7 @@ export const books = [
     ],
 
     links: {
-      amazon: "#"
+      amazon: "https://amzn.to/48Oi9cq"
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780671636036-L.jpg",
     coverColor: "bg-slate-700"
@@ -219,7 +219,8 @@ export const books = [
     ],
 
     links: {
-      amazon: "#"
+      amazon: "https://amzn.to/3KVRO4n",
+
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780123749468-L.jpg",
     coverColor: "bg-emerald-700"
@@ -249,8 +250,8 @@ export const books = [
     ],
 
     links: {
-      amazon: "#",
-      audible: "#"
+      amazon: "https://amzn.to/4q3Jb6S",
+      
     },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
     coverColor: "bg-indigo-700"
@@ -296,7 +297,7 @@ export const books = [
         oneSentence: "Illustrates how leadership behaviour and team structure improve resilience and error trapping."
       }
     ],
-    links: { amazon: "#", audible: "#" },
+    links: { amazon: "https://amzn.to/4pBciP3",  },
     coverImage: "https://covers.openlibrary.org/b/isbn/9780593084637-L.jpg",
     coverColor: "bg-slate-800"
   },
@@ -329,7 +330,7 @@ export const books = [
       }
     ],
 
-    links: { amazon: "#" },
+    links: { amazon: "https://amzn.to/3KVSTsX" },
     coverImage: "https://covers.openlibrary.org/b/isbn/1402280912-L.jpg",
     coverColor: "bg-sky-700"
   }

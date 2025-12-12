@@ -26,7 +26,7 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
       animate={{ opacity: 1, y: 0 }}
       className="group bg-card border border-white/5 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300 shadow-lg"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[224px_1fr_auto]">
+        <div className="grid grid-cols-1 md:grid-cols-[320px_minmax(520px,700px)_auto]">
         {/* Cover */}
         <div className="w-full md:w-56 shrink-0 relative overflow-hidden bg-black/20">
           {book.coverImage ? (
