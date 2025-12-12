@@ -26,7 +26,7 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
       animate={{ opacity: 1, y: 0 }}
       className="group bg-card border border-white/5 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300 shadow-lg"
     >
-        <div className="grid grid-cols-1 md:grid-cols-[320px_minmax(520px,700px)_auto]">
+        <div className="grid grid-cols-1 md:grid-cols-[auto_320px_320px]">
         {/* Cover */}
         <div className="w-full md:w-56 shrink-0 relative overflow-hidden bg-black/20">
           {book.coverImage ? (
@@ -105,7 +105,7 @@ export function BookCard({ book, selectedCompId }: BookCardProps) {
 
         {/* Right: Index + Buy */}
         <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4">
-          <div className="text-right max-w-[260px]">
+          <div className="text-right max-w-[400px]">
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">
               Index
             </div>
