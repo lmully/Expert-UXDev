@@ -7,6 +7,15 @@ interface BookCardProps {
 }
 
 export function BookCard({ book }: BookCardProps) {
+  // ---- SAFELY extract index object ----
+  const competencyIndex =
+    (book as any).CompetencyIndex ??
+    (book as any).competencyIndex ??
+    null;
+
+  const chapterPage = competencyIndex?.chapterPage;
+  const oneSentence = competencyIndex?.oneSentence;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -14,7 +23,9 @@ export function BookCard({ book }: BookCardProps) {
       className="group bg-card border border-white/5 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300 shadow-lg"
     >
       <div className="grid grid-cols-1 md:grid-cols-[224px_1fr_auto]">
-        {/* Book Cover */}
+        {/* ---------------------------------------------------------------- */}
+        {/* LEFT: Book Cover */}
+        {/* ---------------------------------------------------------------- */}
         <div className="w-full md:w-56 shrink-0 relative overflow-hidden bg-black/20">
           {book.coverImage ? (
             <img
@@ -24,7 +35,9 @@ export function BookCard({ book }: BookCardProps) {
             />
           ) : (
             <div
-              className={`w-full h-full ${book.coverColor || "bg-slate-700"} flex items-center justify-center p-8 text-center`}
+              className={`w-full h-full ${
+                book.coverColor || "bg-slate-700"
+              } flex items-center justify-center p-8 text-center`}
             >
               <h4 className="font-display font-bold text-white/90 text-sm leading-tight">
                 {book.title}
@@ -32,38 +45,37 @@ export function BookCard({ book }: BookCardProps) {
             </div>
           )}
 
-          {/* Shine effect on cover */}
+          {/* Shine effect */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         </div>
 
-        {/* Content (centre column) */}
+        {/* ---------------------------------------------------------------- */}
+        {/* CENTRE: Content */}
+        {/* ---------------------------------------------------------------- */}
         <div className="p-6 md:p-8 flex flex-col min-w-0">
           <div className="mb-6">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <h3 className="font-display font-bold text-2xl mb-2 group-hover:text-primary transition-colors leading-tight">
-                  {book.title}
-                </h3>
-                <div className="flex items-center gap-2 text-primary font-mono text-sm">
-                  <span className="truncate">{book.author}</span>
-                  {book.authorLink && (
-                    <a
-                      href={book.authorLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="opacity-50 hover:opacity-100 transition-opacity p-1"
-                      title="About the Author"
-                    >
-                      <User className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
-              </div>
+            <h3 className="font-display font-bold text-2xl mb-2 group-hover:text-primary transition-colors leading-tight">
+              {book.title}
+            </h3>
+
+            <div className="flex items-center gap-2 text-primary font-mono text-sm">
+              <span className="truncate">{book.author}</span>
+              {book.authorLink && (
+                <a
+                  href={book.authorLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="opacity-50 hover:opacity-100 transition-opacity p-1"
+                  title="About the Author"
+                >
+                  <User className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </div>
 
           <div className="space-y-6 flex-grow">
-            {/* Summary */}
+            {/* Synopsis */}
             <div>
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">
                 Synopsis
@@ -73,9 +85,9 @@ export function BookCard({ book }: BookCardProps) {
               </p>
             </div>
 
-            {/* Relevance / Recommendation Reason */}
+            {/* Recommendation */}
             <div className="bg-secondary/30 p-4 rounded-lg border border-white/5">
-              <span className="text-xs font-bold text-accent uppercase tracking-wider flex items-center gap-2 mb-2">
+              <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-2">
                 Why we recommend it
               </span>
               <p className="text-sm text-foreground/90 leading-relaxed">
@@ -88,26 +100,37 @@ export function BookCard({ book }: BookCardProps) {
               <div className="relative pl-6 py-2">
                 <Quote className="absolute left-0 top-0 w-4 h-4 text-white/20 fill-current" />
                 <p className="text-sm italic text-muted-foreground font-serif leading-relaxed">
-                  "{book.excerpt}"
+                  “{book.excerpt}”
                 </p>
               </div>
             )}
           </div>
         </div>
 
-        {/* Right column: Index + buy links under it */}
+        {/* ---------------------------------------------------------------- */}
+        {/* RIGHT: Index + Buy Links */}
+        {/* ---------------------------------------------------------------- */}
         <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4 whitespace-nowrap">
+          {/* Index */}
           <div className="text-right">
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">
               Index
             </div>
+
             <div className="text-3xl font-bold tabular-nums">
-              {book.competencyIndex}
+              {chapterPage ?? "—"}
             </div>
+
+            {oneSentence && (
+              <div className="mt-2 text-xs text-muted-foreground whitespace-normal max-w-[220px]">
+                {oneSentence}
+              </div>
+            )}
           </div>
 
+          {/* Actions */}
           <div className="flex flex-col gap-3 mt-auto w-full items-end">
-            {book.links.amazon && (
+            {book.links?.amazon && (
               <a
                 href={book.links.amazon}
                 target="_blank"
@@ -120,7 +143,7 @@ export function BookCard({ book }: BookCardProps) {
               </a>
             )}
 
-            {book.links.audible && (
+            {book.links?.audible && (
               <a
                 href={book.links.audible}
                 target="_blank"
