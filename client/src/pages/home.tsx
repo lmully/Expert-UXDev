@@ -148,7 +148,7 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-6">
                 {filteredBooks.length > 0 ? (
                   filteredBooks.map(book => (
-                    <BookCard key={book.id} book={book} />
+                    <BookCard key={book.id} book={book} selectedCompId={selectedCompId} />
                   ))
                 ) : (
                   <div className="col-span-full py-12 text-center border border-dashed border-white/10 rounded-xl">

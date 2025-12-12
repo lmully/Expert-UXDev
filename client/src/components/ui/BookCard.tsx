@@ -4,17 +4,21 @@ import { ExternalLink, BookOpen, Headphones, Quote, User } from "lucide-react";
 
 interface BookCardProps {
   book: Book;
+  selectedCompId?: string | null;
 }
 
-export function BookCard({ book }: BookCardProps) {
-  // ---- SAFELY extract index object ----
-  const competencyIndex =
-    (book as any).CompetencyIndex ??
-    (book as any).competencyIndex ??
-    null;
+export function BookCard({ book, selectedCompId }: BookCardProps) {
+  // Risk book uses `competencyIndex: [{ competencyId, chapterPage, oneSentence }, ...]`
+  const competencyIndexArray = (book as any).competencyIndex as
+    | Array<{ competencyId: string; chapterPage?: string; oneSentence?: string }>
+    | undefined;
 
-  const chapterPage = competencyIndex?.chapterPage;
-  const oneSentence = competencyIndex?.oneSentence;
+  const indexEntry = selectedCompId
+    ? competencyIndexArray?.find((x) => x.competencyId === selectedCompId)
+    : undefined;
+
+  const indexValue = indexEntry?.chapterPage ?? "—";
+  const oneSentence = indexEntry?.oneSentence;
 
   return (
     <motion.div
@@ -23,9 +27,7 @@ export function BookCard({ book }: BookCardProps) {
       className="group bg-card border border-white/5 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300 shadow-lg"
     >
       <div className="grid grid-cols-1 md:grid-cols-[224px_1fr_auto]">
-        {/* ---------------------------------------------------------------- */}
-        {/* LEFT: Book Cover */}
-        {/* ---------------------------------------------------------------- */}
+        {/* Cover */}
         <div className="w-full md:w-56 shrink-0 relative overflow-hidden bg-black/20">
           {book.coverImage ? (
             <img
@@ -36,7 +38,7 @@ export function BookCard({ book }: BookCardProps) {
           ) : (
             <div
               className={`w-full h-full ${
-                book.coverColor || "bg-slate-700"
+                (book as any).coverColor || "bg-slate-700"
               } flex items-center justify-center p-8 text-center`}
             >
               <h4 className="font-display font-bold text-white/90 text-sm leading-tight">
@@ -45,13 +47,10 @@ export function BookCard({ book }: BookCardProps) {
             </div>
           )}
 
-          {/* Shine effect */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         </div>
 
-        {/* ---------------------------------------------------------------- */}
-        {/* CENTRE: Content */}
-        {/* ---------------------------------------------------------------- */}
+        {/* Centre */}
         <div className="p-6 md:p-8 flex flex-col min-w-0">
           <div className="mb-6">
             <h3 className="font-display font-bold text-2xl mb-2 group-hover:text-primary transition-colors leading-tight">
@@ -75,7 +74,6 @@ export function BookCard({ book }: BookCardProps) {
           </div>
 
           <div className="space-y-6 flex-grow">
-            {/* Synopsis */}
             <div>
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">
                 Synopsis
@@ -85,17 +83,15 @@ export function BookCard({ book }: BookCardProps) {
               </p>
             </div>
 
-            {/* Recommendation */}
             <div className="bg-secondary/30 p-4 rounded-lg border border-white/5">
               <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-2">
                 Why we recommend it
               </span>
               <p className="text-sm text-foreground/90 leading-relaxed">
-                {book.relevance}
+                {(book as any).relevance}
               </p>
             </div>
 
-            {/* Excerpt */}
             {book.excerpt && (
               <div className="relative pl-6 py-2">
                 <Quote className="absolute left-0 top-0 w-4 h-4 text-white/20 fill-current" />
@@ -107,32 +103,28 @@ export function BookCard({ book }: BookCardProps) {
           </div>
         </div>
 
-        {/* ---------------------------------------------------------------- */}
-        {/* RIGHT: Index + Buy Links */}
-        {/* ---------------------------------------------------------------- */}
-        <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4 whitespace-nowrap">
-          {/* Index */}
-          <div className="text-right">
+        {/* Right: Index + Buy */}
+        <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-white/5 flex flex-col items-end gap-4">
+          <div className="text-right max-w-[260px]">
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">
               Index
             </div>
 
-            <div className="text-3xl font-bold tabular-nums">
-              {chapterPage ?? "—"}
+            <div className="text-sm font-semibold text-foreground whitespace-nowrap">
+              {indexValue}
             </div>
 
             {oneSentence && (
-              <div className="mt-2 text-xs text-muted-foreground whitespace-normal max-w-[220px]">
+              <div className="mt-2 text-xs text-muted-foreground whitespace-normal">
                 {oneSentence}
               </div>
             )}
           </div>
 
-          {/* Actions */}
           <div className="flex flex-col gap-3 mt-auto w-full items-end">
-            {book.links?.amazon && (
+            {(book as any).links?.amazon && (
               <a
-                href={book.links.amazon}
+                href={(book as any).links.amazon}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center gap-2 text-xs font-bold px-4 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors shadow-sm w-full"
@@ -143,9 +135,9 @@ export function BookCard({ book }: BookCardProps) {
               </a>
             )}
 
-            {book.links?.audible && (
+            {(book as any).links?.audible && (
               <a
-                href={book.links.audible}
+                href={(book as any).links.audible}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center gap-2 text-xs font-bold px-4 py-2.5 bg-white/5 text-foreground hover:bg-white/10 rounded-md transition-colors border border-white/10 w-full"
