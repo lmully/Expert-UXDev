@@ -23,7 +23,7 @@ export default function About() {
 
           <h3>How it Works</h3>
           <p>
-            Select a competency you wish to improve, and we will present a list of books that have been identified by senior captains and human factors experts as being particularly relevant to that skill.
+            Select a competency you wish to improve, and we will present a list of books that have been identified by senior captains as being particularly relevant to that skill.
           </p>
           
           <div className="bg-card p-6 rounded-xl border border-white/10 mt-8 not-prose">
