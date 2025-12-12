@@ -145,6 +145,60 @@ export const books: Book[] = [
     coverImage: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
     coverColor: "bg-indigo-700"
   },
+	  {
+    id: "risk-a-users-guide",
+    title: "Risk: A User’s Guide",
+    author: "Stanley McChrystal",
+    authorLink: "https://en.wikipedia.org/wiki/Stanley_McChrystal",
+    summary:
+      "A practical framework for understanding how risk is created, amplified, and controlled inside complex teams and organisations.",
+    relevance:
+      "McChrystal reframes risk as a product of internal factors like communication speed, bias, decision tempo, and leadership behaviour. For pilots, it sharpens situational awareness, improves decision making under uncertainty, and reinforces CRM fundamentals by showing how small internal failures compound into major events.",
+    excerpt:
+      "Risk is not the enemy; risk is the price of doing something new or important.",
+    competencyIds: ["communication", "situation-awareness", "workload", "problem-solving", "leadership"],
+
+    // New field: competency index (page numbers are edition-dependent, so these are approximate ranges)
+    competencyIndex: [
+      {
+        competencyId: "communication",
+        chapterPage: "Ch. 4, pp. ~70–95",
+        oneSentence:
+          "Shows how slow, unclear, or filtered communication dramatically increases overall system risk."
+      },
+      {
+        competencyId: "situation-awareness",
+        chapterPage: "Ch. 2–3, pp. ~30–70",
+        oneSentence:
+          "Explains how bias and narrow perspectives degrade accurate perception of unfolding situations."
+      },
+      {
+        competencyId: "problem-solving",
+        chapterPage: "Ch. 7, pp. ~160–185",
+        oneSentence:
+          "Demonstrates that delayed decisions often create more danger than timely imperfect ones."
+      },
+      {
+        competencyId: "workload",
+        chapterPage: "Intro & Conclusion, pp. ~1–20, ~230–245",
+        oneSentence:
+          "Shows how risk compounds gradually and why early recognition prevents workload escalation."
+      },
+      {
+        competencyId: "leadership",
+        chapterPage: "Ch. 5–6, pp. ~95–160",
+        oneSentence:
+          "Illustrates how leadership behaviour and team structure improve resilience and error trapping."
+      }
+    ],
+
+    links: {
+      amazon: "#",
+      audible: "#"
+    },
+    coverImage: "https://covers.openlibrary.org/b/isbn/9780593084637-L.jpg",
+    coverColor: "bg-slate-800"
+  },
   {
     id: "cockpit-confidential",
     title: "Cockpit Confidential",
