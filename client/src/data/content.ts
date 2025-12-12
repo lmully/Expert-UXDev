@@ -298,7 +298,7 @@ export const books = [
       }
     ],
     links: { amazon: "https://amzn.to/4pBciP3",  },
-    coverImage: "https://covers.openlibrary.org/b/isbn/9780593084637-L.jpg",
+    coverImage: "https://m.media-amazon.com/images/I/61lirZDjRSL._AC_UY327_FMwebp_QL65_.jpg",
     coverColor: "bg-slate-800"
   },
 
