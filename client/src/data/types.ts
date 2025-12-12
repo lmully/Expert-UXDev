@@ -4,7 +4,11 @@ export interface Competency {
   description: string;
   icon: string;
 }
-
+export interface CompetencyIndexItem {
+  competencyId: string;
+  chapterPage: string;
+  oneSentence: string;
+}
 export interface Book {
   id: string;
   title: string;
@@ -14,6 +18,8 @@ export interface Book {
   relevance: string; // "Why this book is a good read on the competency"
   excerpt?: string; // "An excerpt from the book that applies to the competency"
   competencyIds: string[];
+	// NEW: Optional competency index for chapter/page references
+  competencyIndex?: CompetencyIndexItem[];
   links: {
     amazon?: string;
     booktopia?: string;
