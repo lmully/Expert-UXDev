@@ -1,0 +1,70 @@
+Replit Agent prompt
+
+You are working in an existing React web app in this repo. Do not redesign the UI. Keep the current layout, styling, typography, spacing, and overall “feel”. Only change what is needed to add the following navigation and data structure.
+
+First: detect the framework
+
+Inspect package.json and folder structure.
+	•	If next is present or folders like app/ or pages/ exist → treat as Next.js.
+	•	If react-router-dom is present → treat as React Router.
+Use the existing routing approach already used in the repo (do not introduce a new router).
+
+Target structure (UX)
+	1.	Home: Keep existing competency panels/cards. Clicking a competency navigates to a Competency detail page.
+	2.	Competency page: Show competency title/description, then a section “Common Problems” listing problems for that competency. Clicking a problem navigates to a Problem page (preferred) or opens a modal (only if routing is painful).
+	3.	Problem page: Show:
+	•	Problem title
+	•	“It feels like…” (symptom)
+	•	“Improves…” (outcome)
+	•	Recommendations list (initially one book). For each recommendation show:
+	•	Book cover (reuse existing cover component)
+	•	Book title + author
+	•	Single best chapter (only one chapter per book)
+	•	“Why it helps” text
+	•	Optional badges: timeToReadMins, difficulty, tags
+	•	Affiliate button if affiliateUrl exists (open new tab)
+
+Data model (content-driven)
+
+Create src/data/content.json and render the site from this file (not hard-coded TS arrays).
+
+Top-level JSON:
+	•	books[]: { id, title, author, year?, coverImageUrl?, affiliateUrl? }
+	•	competencies[]: { id, title, description, problems[] }
+	•	problems[] nested: { id, title, symptom, outcome, recommendations[] }
+	•	recommendations[]: { bookId, chapter, chapterRef?, whyItHelps, keyTakeaway?, timeToReadMins?, difficulty?, tags? }
+
+Create src/lib/content.ts with helpers:
+	•	getCompetencies()
+	•	getCompetencyById(id)
+	•	getProblemById(problemId) (search all competencies)
+	•	getBookById(bookId)
+	•	resolveRecommendations(problem) (joins book details)
+
+Enforcement rule
+
+If a problem includes multiple recommendations with the same bookId, only show the first and console.warn about invalid data.
+
+Routing
+
+Implement routes using the repo’s existing approach:
+	•	Next.js: create /competency/[id] and /problem/[id]
+	•	React Router: create routes /competency/:id and /problem/:id
+
+Update existing links to point to these pages. Do not break existing routes.
+
+UI constraints (important)
+	•	Reuse existing Card components and spacing.
+	•	Fix long chapter titles to wrap cleanly.
+	•	Ensure text alignment is correct (no weird centered text in the right column).
+	•	Mobile-first: no overflow or clipped content.
+
+Seed content
+
+Populate content.json with 3 competencies (communication, decision-making, workload), 5 problems each, and the book “Extreme Ownership” with one best chapter per problem + why-it-helps text (use the dataset provided earlier in this conversation).
+
+Deliverable
+
+App runs without TS/runtime errors.
+Home → Competency → Problem flow works.
+No redesign.

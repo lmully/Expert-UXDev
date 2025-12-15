@@ -1,0 +1,361 @@
+{
+  "books": [
+    {
+      "id": "extreme-ownership",
+      "title": "Extreme Ownership",
+      "author": "Jocko Willink & Leif Babin",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9781250183866-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "stick-and-rudder",
+      "title": "Stick and Rudder",
+      "author": "Wolfgang Langewiesche",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780070362406-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "handling-the-big-jets",
+      "title": "Handling the Big Jets",
+      "author": "D.P. Davies",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0903083019-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "checklist-manifesto",
+      "title": "The Checklist Manifesto",
+      "author": "Atul Gawande",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780312430009-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "fate-is-the-hunter",
+      "title": "Fate is the Hunter",
+      "author": "Ernest K. Gann",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780671636036-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "crew-resource-management",
+      "title": "Crew Resource Management",
+      "author": "Barbara Kanki",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780123749468-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+      "affiliateUrl": "#"
+    },
+    {
+      "id": "cockpit-confidential",
+      "title": "Cockpit Confidential",
+      "author": "Patrick Smith",
+      "coverImageUrl": "https://covers.openlibrary.org/b/isbn/1402280912-L.jpg",
+      "affiliateUrl": "#"
+    }
+  ],
+  "competencies": [
+    {
+      "id": "communication",
+      "title": "Communication",
+      "description": "Exchange information clearly and accurately.",
+      "icon": "Radio",
+      "problems": [
+        {
+          "id": "comm-misunderstanding",
+          "title": "Team Misunderstanding",
+          "symptom": "Team members are not on the same page.",
+          "outcome": "Clear, shared understanding of objectives.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 6: Simple",
+              "whyItHelps": "Simplifies communication to ensure everyone understands the mission.",
+              "timeToReadMins": 15,
+              "difficulty": "Easy",
+              "tags": ["Leadership", "Clarity"]
+            }
+          ]
+        },
+        {
+          "id": "comm-silence",
+          "title": "Silence in the Cockpit",
+          "symptom": "Critical information is not being shared.",
+          "outcome": "Open flow of information.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 8: Decentralized Command",
+              "whyItHelps": "Encourages everyone to speak up and take ownership of their role.",
+              "timeToReadMins": 20,
+              "difficulty": "Medium",
+              "tags": ["Communication", "Teamwork"]
+            }
+          ]
+        },
+        {
+          "id": "comm-conflict",
+          "title": "Conflict Resolution",
+          "symptom": "Disagreements are hindering performance.",
+          "outcome": "Constructive resolution of conflicts.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 10: Leading Up and Down",
+              "whyItHelps": "Provides strategies for managing relationships and resolving conflicts.",
+              "timeToReadMins": 25,
+              "difficulty": "Medium",
+              "tags": ["Conflict", "Leadership"]
+            }
+          ]
+        },
+        {
+          "id": "comm-feedback",
+          "title": "Giving Feedback",
+          "symptom": "Feedback is not being delivered effectively.",
+          "outcome": "Feedback that leads to improvement.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 2: No Bad Teams, Only Bad Leaders",
+              "whyItHelps": "Emphasizes the leader's responsibility in guiding team performance.",
+              "timeToReadMins": 15,
+              "difficulty": "Easy",
+              "tags": ["Feedback", "Leadership"]
+            }
+          ]
+        },
+        {
+          "id": "comm-briefing",
+          "title": "Ineffective Briefings",
+          "symptom": "Briefings are confusing or too long.",
+          "outcome": "Concise and effective briefings.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 7: Prioritize and Execute",
+              "whyItHelps": "Focuses on delivering the most critical information first.",
+              "timeToReadMins": 10,
+              "difficulty": "Easy",
+              "tags": ["Briefing", "Efficiency"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "description": "Identify risks and resolve problems using a structured decision-making process.",
+      "icon": "BrainCircuit",
+      "problems": [
+        {
+          "id": "dm-paralysis",
+          "title": "Analysis Paralysis",
+          "symptom": "Overthinking is delaying action.",
+          "outcome": "Timely and effective decisions.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 7: Prioritize and Execute",
+              "whyItHelps": "Teaches how to detach and make decisions under pressure.",
+              "timeToReadMins": 15,
+              "difficulty": "Medium",
+              "tags": ["Decision Making", "Pressure"]
+            }
+          ]
+        },
+        {
+          "id": "dm-bias",
+          "title": "Cognitive Bias",
+          "symptom": "Decisions are influenced by personal bias.",
+          "outcome": "Objective and rational decisions.",
+          "recommendations": [
+            {
+              "bookId": "thinking-fast-and-slow",
+              "chapter": "Part 2: Heuristics and Biases",
+              "whyItHelps": "Explains how biases affect judgment and how to mitigate them.",
+              "timeToReadMins": 30,
+              "difficulty": "Hard",
+              "tags": ["Psychology", "Bias"]
+            }
+          ]
+        },
+        {
+          "id": "dm-pressure",
+          "title": "Deciding Under Pressure",
+          "symptom": "Stress is impacting decision quality.",
+          "outcome": "Calm and calculated decisions.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 1: Extreme Ownership",
+              "whyItHelps": "Taking ownership reduces stress and clarifies the path forward.",
+              "timeToReadMins": 20,
+              "difficulty": "Easy",
+              "tags": ["Stress", "Leadership"]
+            }
+          ]
+        },
+        {
+          "id": "dm-risk",
+          "title": "Risk Assessment",
+          "symptom": "Risks are not being properly evaluated.",
+          "outcome": "Accurate risk assessment.",
+          "recommendations": [
+            {
+              "bookId": "handling-the-big-jets",
+              "chapter": "Chapter 3: Flight Handling",
+              "whyItHelps": "Provides technical insights into assessing flight risks.",
+              "timeToReadMins": 40,
+              "difficulty": "Hard",
+              "tags": ["Technical", "Risk"]
+            }
+          ]
+        },
+        {
+          "id": "dm-team",
+          "title": "Groupthink",
+          "symptom": "The team is agreeing too easily.",
+          "outcome": "Diverse perspectives are considered.",
+          "recommendations": [
+            {
+              "bookId": "checklist-manifesto",
+              "chapter": "Chapter 4: The Idea",
+              "whyItHelps": "Encourages structured input from all team members.",
+              "timeToReadMins": 25,
+              "difficulty": "Medium",
+              "tags": ["Teamwork", "Process"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workload",
+      "title": "Workload Management",
+      "description": "Manage available resources to maintain safety and efficiency.",
+      "icon": "Activity",
+      "problems": [
+        {
+          "id": "wl-overwhelm",
+          "title": "Task Saturation",
+          "symptom": "Feeling overwhelmed by too many tasks.",
+          "outcome": "Managed workload and focus.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 7: Prioritize and Execute",
+              "whyItHelps": "A systematic approach to handling multiple tasks under pressure.",
+              "timeToReadMins": 15,
+              "difficulty": "Easy",
+              "tags": ["Prioritization", "Stress"]
+            }
+          ]
+        },
+        {
+          "id": "wl-delegation",
+          "title": "Poor Delegation",
+          "symptom": "Doing everything yourself.",
+          "outcome": "Effective distribution of tasks.",
+          "recommendations": [
+            {
+              "bookId": "extreme-ownership",
+              "chapter": "Chapter 8: Decentralized Command",
+              "whyItHelps": "Explains the importance of trusting the team to execute.",
+              "timeToReadMins": 20,
+              "difficulty": "Medium",
+              "tags": ["Delegation", "Leadership"]
+            }
+          ]
+        },
+        {
+          "id": "wl-planning",
+          "title": "Lack of Planning",
+          "symptom": "Reacting instead of anticipating.",
+          "outcome": "Proactive workload management.",
+          "recommendations": [
+            {
+              "bookId": "checklist-manifesto",
+              "chapter": "Chapter 2: The Checklist",
+              "whyItHelps": "Shows how preparation reduces in-flight workload.",
+              "timeToReadMins": 20,
+              "difficulty": "Easy",
+              "tags": ["Planning", "Process"]
+            }
+          ]
+        },
+        {
+          "id": "wl-distraction",
+          "title": "Distraction Management",
+          "symptom": "Losing focus due to interruptions.",
+          "outcome": "Maintained focus on critical tasks.",
+          "recommendations": [
+            {
+              "bookId": "stick-and-rudder",
+              "chapter": "Chapter 1: Wings",
+              "whyItHelps": "Reminds pilots to focus on the fundamental task of flying.",
+              "timeToReadMins": 30,
+              "difficulty": "Medium",
+              "tags": ["Focus", "Basics"]
+            }
+          ]
+        },
+        {
+          "id": "wl-fatigue",
+          "title": "Fatigue Management",
+          "symptom": "Performance degrading due to tiredness.",
+          "outcome": "Awareness and mitigation of fatigue.",
+          "recommendations": [
+            {
+              "bookId": "crew-resource-management",
+              "chapter": "Chapter 5: Fatigue",
+              "whyItHelps": "Scientific approach to understanding and managing fatigue.",
+              "timeToReadMins": 45,
+              "difficulty": "Hard",
+              "tags": ["Health", "Safety"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manual-flight",
+      "title": "Manual Flight Path Management",
+      "description": "Control the aircraft flight path through manual flight inputs.",
+      "icon": "Joystick",
+      "problems": []
+    },
+    {
+      "id": "auto-flight",
+      "title": "Automated Flight Path Management",
+      "description": "Control the aircraft flight path through automation and mode selection.",
+      "icon": "Cpu",
+      "problems": []
+    },
+    {
+      "id": "procedures",
+      "title": "Application of Procedures",
+      "description": "Identify and apply procedures in accordance with published operating instructions.",
+      "icon": "BookOpen",
+      "problems": []
+    },
+    {
+      "id": "situation-awareness",
+      "title": "Situation Awareness",
+      "description": "Perceive and comprehend all relevant information regarding the aircraft and its environment.",
+      "icon": "Radar",
+      "problems": []
+    },
+    {
+      "id": "leadership",
+      "title": "Leadership & Teamwork",
+      "description": "Influence others to contribute to a shared goal and collaborate effectively.",
+      "icon": "Users",
+      "problems": []
+    }
+  ]
+}
